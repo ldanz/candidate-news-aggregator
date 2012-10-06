@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Zipcode:
+  = @user.zipcode
+%p
+  %b Economy:
+  = @user.economy
+%p
+  %b Healthcare:
+  = @user.healthcare
+%p
+  %b Social security:
+  = @user.social_security
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
