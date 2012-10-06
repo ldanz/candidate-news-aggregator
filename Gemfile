@@ -1,8 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+
+gem 'capybara'
+gem 'haml'
+gem 'haml-rails'
+gem 'mocha'
 gem 'rspec'
 gem 'rspec-rails'
+gem 'sunlight'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
