@@ -10,6 +10,8 @@ gem 'rspec'
 gem 'rspec-rails'
 gem 'sunlight'
 
+gem 'therubyracer'
+#This code will be run each time you run your specs.
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

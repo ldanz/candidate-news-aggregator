@@ -1,7 +1,7 @@
 CandidateNewsAggregator::Application.routes.draw do
-  resources :news_feed do
-    get 'foo', :on => :collection
-  end
+  resources :users
+
+  resources :news_feed
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
