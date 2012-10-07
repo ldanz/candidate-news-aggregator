@@ -1,0 +1,6 @@
+%h1= "Welcome#{", #{@user.name}" if @user.name != ''}!"
+%h2= "Here are your representatives:"
+%table
+  - @reps.each do |rep|
+    %tr
+      %td= "#{rep.title} #{rep.firstname} #{rep.lastname}"
