@@ -1,13 +1,15 @@
 %h1= "Welcome#{", #{@user.name}" if @user.name != ''}!"
 %h2= "Here are your representatives:"
-%table
+%table.table.table-hover
   - @reps.each do |rep|
     %tr
-      %td= "#{rep.title} #{rep.name}"
+      %td
+        %a{href: "##{rep.name.gsub(' ', '_')}"}= "#{rep.title} #{rep.name}"
       %td= "#{rep.party}"
-%table
-  - @reps.each do |rep|
-    %h3= rep.name
-    - rep.get_news.each do |story|
-      .story
-        %p= story
+- @reps.each do |rep|
+  %a{name: "#{rep.name.gsub(' ', '_')}"}
+  %h3= rep.name
+  - rep.get_news.each do |story|
+    %h4= story[:title]
+    - story[:text].each do |paragraph|
+      %p= paragraph

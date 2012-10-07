@@ -22,10 +22,12 @@ class Rep
   end
 
   def get_news
-    response = HTTParty.get("http://api.npr.org/query?fields=text&requiredAssets=text&searchTerm=#{URI::escape(name)}&dateType=story&output=JSON&apiKey=MDEwMjMzMzk3MDEzNDk2MjMxMDk0NjA0NA001")
+    response = HTTParty.get("http://api.npr.org/query?fields=text,title&requiredAssets=text&searchTerm=#{URI::escape(name)}&dateType=story&output=JSON&apiKey=MDEwMjMzMzk3MDEzNDk2MjMxMDk0NjA0NA001")
     stories = response['list']['story']
     stories.map do |story|
-      story['text']['paragraph'].inject('') { |full_text, paragraph| "#{full_text}\n\n#{paragraph['$text']}"}
+      title = story['title']['$text']
+      text = story['text']['paragraph'].map { |paragraph| paragraph['$text']}
+      {title: title, text: text}
     end
   end
 end
