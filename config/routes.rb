@@ -1,11 +1,8 @@
 CandidateNewsAggregator::Application.routes.draw do
-  get "rep/index"
-
-  get "rep/show"
 
   resources :users
 
-  resources :news_feed
+  resources :reps
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
