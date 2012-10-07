@@ -3,4 +3,11 @@
 %table
   - @reps.each do |rep|
     %tr
-      %td= "#{rep.title} #{rep.firstname} #{rep.lastname}"
+      %td= "#{rep.title} #{rep.name}"
+      %td= "#{rep.party}"
+%table
+  - @reps.each do |rep|
+    %h3= rep.name
+    - rep.get_news.each do |story|
+      .story
+        %p= story
