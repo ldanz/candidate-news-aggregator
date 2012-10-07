@@ -1,4 +1,8 @@
 CandidateNewsAggregator::Application.routes.draw do
+  get "rep/index"
+
+  get "rep/show"
+
   resources :users
 
   resources :news_feed
