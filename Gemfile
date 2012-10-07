@@ -9,6 +9,7 @@ gem 'mocha'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'sunlight'
+gem 'pry'
 
 gem 'therubyracer'
 #This code will be run each time you run your specs.
