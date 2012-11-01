@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'USers model' do
+describe 'Users model' do
   before :each do
     @user = User.new(name: "Chris Siggs")
   end
