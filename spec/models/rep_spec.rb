@@ -7,14 +7,15 @@ describe "Rep model" do
       Rep.get_legislators_in(20903).count.should > 1
     end
     it 'collects accurate rep information based on the zipcode param' do
-      flat_array = []
-      Rep.get_legislators_in(94044).each do |rep|
-        flat_array.push rep.name
-      end
-      flat_array.should include "Barbara Boxer"
+      Rep.get_legislators_in(94044).map {|rep| rep.name}.should include "Barbara Boxer"
     end
     it 'creates new Rep object from sunlight api info' do
       Rep.get_legislators_in(20903)[0].should be_an_instance_of Rep
+    end
+  end
+
+  describe 'NPR api get_news method' do
+    it 'receives response from api call' do
     end
   end
 end
