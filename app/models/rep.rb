@@ -22,6 +22,11 @@ class Rep
   end
 
   def get_news
+    #npr api search id's for each topic
+    ECON = 1017
+    HEALTHCARE = 1027
+    EDUCATION = 1013
+
     response = HTTParty.get("http://api.npr.org/query?fields=text,title&requiredAssets=text&searchTerm=#{URI::escape(name)}&dateType=story&output=JSON&apiKey=#{NPR_API_KEY}")
     stories = response['list']['story']
     stories.map do |story|
