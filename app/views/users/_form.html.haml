@@ -4,7 +4,7 @@
       %strong= "User not saved:"
       %span= "Invalid input"
   -# TODO make view helper
-  - {name: :text_field, zipcode: :text_field, economy: :check_box, healthcare: :check_box, social_security: :check_box}.each do |field_name, field_type|
+  - {name: :text_field, zipcode: :text_field, economy: :check_box, healthcare: :check_box, education: :check_box}.each do |field_name, field_type|
     .field.control-group
       = f.label field_name, :class => 'control-label'
       = f.send(field_type, field_name, :class => 'controls')

@@ -6,7 +6,7 @@
     %th Zipcode
     %th Economy
     %th Healthcare
-    %th Social security
+    %th Education
     %th
     %th
     %th
@@ -17,7 +17,7 @@
       %td= user.zipcode
       %td= user.economy
       %td= user.healthcare
-      %td= user.social_security
+      %td= user.education
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
